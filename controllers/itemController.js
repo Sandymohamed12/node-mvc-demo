@@ -19,3 +19,8 @@ exports.addItem = async (req, res) => {
     res.status(500).send('Error saving item');
   }
 };
+exports.deleteItem = (req, res) => {
+  const id = parseInt(req.params.id);
+  items = items.filter(item => item.id !== id);
+  res.redirect('/');
+};
